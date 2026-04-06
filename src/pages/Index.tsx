@@ -353,6 +353,76 @@ const Index = () => {
         </div>
       </section>
 
+      {/* ===== DISCORD-STYLE REVIEWS MARQUEE ===== */}
+      <section className="py-24 mt-8 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-background via-card/10 to-background" />
+        <div className="relative z-10">
+          <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} className="text-center mb-10">
+            <div className="inline-flex items-center gap-2 mb-3">
+              <DiscordIcon size={14} />
+              <span className="text-[11px] font-semibold text-primary uppercase tracking-widest">Community Reviews</span>
+            </div>
+            <h3 className="font-display text-2xl font-bold text-foreground">What our users are saying</h3>
+          </motion.div>
+
+          {/* Row 1 — scrolling left */}
+          <div className="relative mb-4">
+            <div className="flex animate-[marquee_60s_linear_infinite] w-max gap-4">
+              {[...reviewsRow1, ...reviewsRow1].map((r, i) => (
+                <div key={i} className="flex-shrink-0 w-[380px] rounded-2xl border border-glass-border bg-card/40 backdrop-blur-xl p-5 hover:border-primary/20 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-full bg-[#5865f2]/20 border border-[#5865f2]/30 flex items-center justify-center text-sm">
+                      {r.avatar}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-sm font-semibold text-foreground">{r.name}</span>
+                        <span className="text-[10px] text-muted-foreground/60 font-mono">{r.tag}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[9px] text-muted-foreground/50">{r.time}</span>
+                        <span className="text-[9px] px-1.5 py-0.5 rounded bg-primary/10 text-primary font-semibold">{r.platform}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{r.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
+          </div>
+
+          {/* Row 2 — scrolling right */}
+          <div className="relative">
+            <div className="flex animate-[marquee-reverse_65s_linear_infinite] w-max gap-4">
+              {[...reviewsRow2, ...reviewsRow2].map((r, i) => (
+                <div key={i} className="flex-shrink-0 w-[380px] rounded-2xl border border-glass-border bg-card/40 backdrop-blur-xl p-5 hover:border-primary/20 transition-all duration-300">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-9 h-9 rounded-full bg-[#5865f2]/20 border border-[#5865f2]/30 flex items-center justify-center text-sm">
+                      {r.avatar}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <span className="text-sm font-semibold text-foreground">{r.name}</span>
+                        <span className="text-[10px] text-muted-foreground/60 font-mono">{r.tag}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <span className="text-[9px] text-muted-foreground/50">{r.time}</span>
+                        <span className="text-[9px] px-1.5 py-0.5 rounded bg-primary/10 text-primary font-semibold">{r.platform}</span>
+                      </div>
+                    </div>
+                  </div>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{r.text}</p>
+                </div>
+              ))}
+            </div>
+            <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-background to-transparent pointer-events-none z-10" />
+            <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-background to-transparent pointer-events-none z-10" />
+          </div>
+        </div>
+      </section>
+
       {/* ===== CHEATS SHOWCASE ===== */}
       <section className="py-24 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-background via-card/20 to-background" />

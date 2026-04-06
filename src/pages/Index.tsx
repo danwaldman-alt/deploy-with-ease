@@ -181,10 +181,10 @@ const Index = () => {
       {/* ===== ABOUT / STATS ===== */}
       <section className="py-32 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}>
+          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+            <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} className="flex flex-col justify-center">
               <span className="text-[11px] font-semibold text-primary uppercase tracking-widest mb-3 block">About X-NETWORK</span>
-              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6">
+              <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-6 leading-[1.1]">
                 Built for Speed.<br />Designed for <span className="gradient-text">Stealth</span>.
               </h2>
               <p className="text-muted-foreground leading-relaxed mb-8">
